@@ -1,0 +1,22 @@
+<div class='site-center'><h1>
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Company</th>
+    <th>Street</th>
+    <th>City</th>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>{{user.name}}</td>
+    <td>{{user.username}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.company.name}}</td>
+    <td>{{user.address.street}}</td>
+    <td>{{user.address.city}}</td>
+  </tr>
+</table>
+
+</h1>
+</div>
