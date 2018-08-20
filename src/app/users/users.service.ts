@@ -7,10 +7,9 @@ import { Observable, of } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class JsonUsersService {
+export class UsersService {
 
   constructor(private http: HttpClient) {
-  	var obj;
    }
    
    public getJSON(): Observable<any> {

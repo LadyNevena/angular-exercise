@@ -17,9 +17,26 @@ th, td{
 	padding: 5px;
 }
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid #464646;
     border-collapse: collapse;
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
+    color: #464646;
    
+}
+input[type=text] {
+    width: 300px;
+    box-sizing: border-box;
+    border: 2px solid #808080;
+    border-radius: 50px;
+    font-size: 15px;
+    background-image: url('./icons/searchicon.png');
+    background-color: #dddddd; 
+    background-repeat: no-repeat;
+    padding: 4px 20px 4px 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #464646;
+}
+.table-search{
+	padding-bottom: 15px;
 }
