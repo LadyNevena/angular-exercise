@@ -12,4 +12,9 @@ export class User{
 	phone: string; 
 	website: string;
     company: Company;
+    
+    constructor(values: Object = {}) {
+      //Constructor initialization
+      Object.assign(this, values);
+  }
 }

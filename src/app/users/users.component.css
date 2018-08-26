@@ -37,6 +37,23 @@ input[type=text] {
     font-family: Arial, Helvetica, sans-serif;
     color: #464646;
 }
-.table-search{
+
+.table-search {
 	padding-bottom: 15px;
 }
+.button {
+	float: right;
+	display: inline-block;
+  	padding: 4px 20px 4px 18px;
+  	font-size: 15px;
+  	cursor: pointer;
+  	text-align: center;
+  	outline: none;
+  	color: #464646;
+  	background-color: #dddddd;
+  	border: 2px solid #808080;
+  	border-radius: 9px;
+  	box-shadow: 0 3px #999;
+  	font-family: Arial, Helvetica, sans-serif;
+}
+.button:hover {background-color: #c0c0c0}

@@ -10,6 +10,8 @@ import { UsersComponent } from './users/users.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { FilterPipe } from './users/pipes/filter.pipe';
+import { FormComponent } from './form/form.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 enableProdMode();
@@ -19,13 +21,15 @@ enableProdMode();
     AppComponent,
     HomeComponent,
     UsersComponent,
-    FilterPipe
+    FilterPipe,
+    FormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,167 @@
+
+<div class='site-center'>
+	<h1>New User</h1>
+	<hr>
+	<div class="container">
+		<form (ngSubmit)="onFormSubmit(addUserForm)" #addUserForm="ngForm"
+			novalidate>
+			<div class="form-group row">
+				<label for="lgFormGroupInput"
+					class="col-sm-2 col-form-label col-form-label-lg">Name *</label>
+				<div class="col-sm-10"
+					[ngClass]="{'red-border-class': name.invalid && addUserForm.submitted}">
+					<input type="text" name="name" class="form-control form-control-lg"
+						id="lgFormGroupInput" [(ngModel)]="user.name" #name="ngModel"
+						required> <span
+						*ngIf="name.invalid && addUserForm.submitted"> Name is
+						required </span>
+				</div>
+
+			</div>
+
+
+			<div class="form-group row">
+				<label for="lgFormGroupInput"
+					class="col-sm-2 col-form-label col-form-label-lg">Username
+					*</label>
+				<div class="col-sm-10"
+					[ngClass]="{'red-border-class': username.invalid && addUserForm.submitted}">
+					<input type="text" name="username"
+						class="form-control form-control-lg" id="lgFormGroupInput"
+						[(ngModel)]="user.username" #username="ngModel" required>
+					<span *ngIf="username.invalid && addUserForm.submitted">
+						Username is required </span>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="lgFormGroupInput"
+					class="col-sm-2 col-form-label col-form-label-lg">Email *</label>
+				<div class="col-sm-10"
+					[ngClass]="{'red-border-class': email.invalid && addUserForm.submitted}">
+					<input type="text" name="email"
+						class="form-control form-control-lg" id="lgFormGroupInput"
+						[(ngModel)]="user.email" placeholder="you@example.com"
+						#email="ngModel" required> <span
+						*ngIf="email.invalid && addUserForm.submitted">Email is
+						required </span>
+				</div>
+			</div>
+			<fieldset ngModelGroup="address">
+				<div class="form-group row">
+					<label for="lgFormGroupInput"
+						class="col-sm-2 col-form-label col-form-label-lg">Street</label>
+					<div class="col-sm-10">
+						<input type="text" name="street"
+							class="form-control form-control-lg" id="lgFormGroupInput"
+							[(ngModel)]="user.address.street">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="lgFormGroupInput"
+						class="col-sm-2 col-form-label col-form-label-lg">City</label>
+					<div class="col-sm-10">
+						<input type="text" name="city"
+							class="form-control form-control-lg" id="lgFormGroupInput"
+							[(ngModel)]="user.address.city">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="lgFormGroupInput"
+						class="col-sm-2 col-form-label col-form-label-lg">Suit</label>
+					<div class="col-sm-10">
+						<input type="text" name="suite"
+							class="form-control form-control-lg" id="lgFormGroupInput"
+							[(ngModel)]="user.address.suite">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="lgFormGroupInput"
+						class="col-sm-2 col-form-label col-form-label-lg">Zipcode</label>
+					<div class="col-sm-10">
+						<input type="text" name="zipcode"
+							class="form-control form-control-lg" id="lgFormGroupInput"
+							[(ngModel)]="user.address.zipcode">
+					</div>
+				</div>
+			</fieldset>
+			<fieldset ngModelGroup="geo">
+				<div class="form-group row">
+					<label for="lgFormGroupInput"
+						class="col-sm-2 col-form-label col-form-label-lg">Lat</label>
+					<div class="col-sm-10">
+						<input type="text" name="lat" class="form-control form-control-lg"
+							id="lgFormGroupInput" [(ngModel)]="user.geo.lat">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="lgFormGroupInput"
+						class="col-sm-2 col-form-label col-form-label-lg">Lng</label>
+					<div class="col-sm-10">
+						<input type="text" name="lng" class="form-control form-control-lg"
+							id="lgFormGroupInput" [(ngModel)]="user.geo.lng">
+					</div>
+				</div>
+			</fieldset>
+			<fieldset ngModelGroup="company">
+				<div class="form-group row">
+					<label for="lgFormGroupInput"
+						class="col-sm-2 col-form-label col-form-label-lg">Company
+						name</label>
+					<div class="col-sm-10">
+						<input type="text" name="name"
+							class="form-control form-control-lg" id="lgFormGroupInput"
+							[(ngModel)]="user.company.name">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="lgFormGroupInput"
+						class="col-sm-2 col-form-label col-form-label-lg">Catch
+						phrase</label>
+					<div class="col-sm-10">
+						<input type="text" name="catchPhrase"
+							class="form-control form-control-lg" id="lgFormGroupInput"
+							[(ngModel)]="user.company.catchPhrase">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="lgFormGroupInput"
+						class="col-sm-2 col-form-label col-form-label-lg">Bs</label>
+					<div class="col-sm-10">
+						<input type="text" name="bs" class="form-control form-control-lg"
+							id="lgFormGroupInput" [(ngModel)]="user.company.bs">
+					</div>
+				</div>
+			</fieldset>
+			<div class="form-group row">
+				<label for="lgFormGroupInput"
+					class="col-sm-2 col-form-label col-form-label-lg">Phone</label>
+				<div class="col-sm-10">
+					<input type="text" name="phone"
+						class="form-control form-control-lg" id="lgFormGroupInput"
+						[(ngModel)]="user.phone">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="lgFormGroupInput"
+					class="col-sm-2 col-form-label col-form-label-lg">Website</label>
+				<div class="col-sm-10">
+					<input type="text" name="website"
+						class="form-control form-control-lg" id="lgFormGroupInput"
+						[(ngModel)]="user.website">
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-sm-4 offset-sm-2 cancelBtn">
+					<button type="reset" (click)="toggleTableVisible()"
+						class="btn btn-default button ">
+						<b>Cancel</b>
+					</button>
+					<button type="submit" (click)="onFormSubmit()"
+						class="btn btn-success button saveBtn">
+						<b>Save</b>
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

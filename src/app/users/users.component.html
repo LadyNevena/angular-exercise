@@ -1,25 +1,31 @@
 <div class='site-center'>
-<div>
-<div class='table-search'>
-  <input type="text" name="searchString" placeholder="Search" [(ngModel)]="searchString">
-</div>
-<table style="width:100%">
-  <tr>
-    <th>Name</th>
-    <th>Username</th>
-    <th>Email</th>
-    <th>Company</th>
-    <th>Street</th>
-    <th>City</th>
-  </tr>
-  <tr *ngFor="let user of users | filter: 'email name username address.city company.name address.street' : searchString">
-    <td>{{user.name}}</td>
-    <td>{{user.username}}</td>
-    <td>{{user.email}}</td>
-    <td>{{user.company.name}}</td>
-    <td>{{user.address.street}}</td>
-    <td>{{user.address.city}}</td>
-  </tr>
-</table>
-</div>
-</div>
+	<div>
+		<div class='table-search' *ngIf="visible">
+			<input type="text" name="searchString" placeholder="Search"
+				[(ngModel)]="searchString">
+			<button class="button btn-default button" (click)="toggleVisible()">
+				<b>Add</b>
+			</button>
+		</div>
+		<table style="width: 100%" *ngIf="visible">
+			<tr>
+				<th>Name</th>
+				<th>Username</th>
+				<th>Email</th>
+				<th>Company</th>
+				<th>Street</th>
+				<th>City</th>
+			</tr>
+			<tr
+				*ngFor="let user of users | filter: 'email name username address.city company.name address.street' : searchString">
+				<td>{{user.name}}</td>
+				<td>{{user.username}}</td>
+				<td>{{user.email}}</td>
+				<td>{{user.company.name}}</td>
+				<td>{{user.address.street}}</td>
+				<td>{{user.address.city}}</td>
+			</tr>
+		</table>
+		<app-form *ngIf="!visible" (newUserEvent)="getNewUser($event)"
+			(tableVisibleEvent)="getTableVisible($event)"></app-form>
+	</div>
